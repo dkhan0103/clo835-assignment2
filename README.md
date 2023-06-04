@@ -1,7 +1,7 @@
 
 # Welcome to the README file for CLO835 Assignment 1!
 
-This assignment is done by Mohd Danish Khan mkhan348
+This assignment is done by Mohd Danish Khan
 
 ## Assignment 1 Title:
 
