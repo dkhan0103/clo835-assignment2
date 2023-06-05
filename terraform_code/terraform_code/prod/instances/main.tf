@@ -170,12 +170,13 @@ resource "aws_eip" "static_eip" {
 # Create an Amazon ECR repository
 resource "aws_ecr_repository" "my_repository" {
   name = "docker-assignment"
+  force_delete = true
 }
 
 # EBS Volume
 resource "aws_ebs_volume" "my_ebs_volume" {
   availability_zone = aws_instance.my_amazon.availability_zone
-  size              = 20
+  size              = 80
   tags = merge(local.default_tags,
     {
       "Name" = "${local.name_prefix}-ebs"
