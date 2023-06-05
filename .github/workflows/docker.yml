@@ -20,27 +20,23 @@ jobs:
          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
          AWS_SESSION_TOKEN: ${{ secrets.AWS_SESSION_TOKEN }}
-#          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-#          AWS_ACCESS_KEY_ID: ASIAVRGR5GVGRNL53CRN
-#          AWS_SECRET_ACCESS_KEY: H8EZtI1x+KqxvP6ruhbVyneTonEbVYRnv3A8330i
-#          AWS_SESSION_TOKEN: FwoGZXIvYXdzEOf//////////wEaDAopQ+wsJ4IMG3mvyCLBAUBowbwCf8rxk190i8qRT9clW82bHdurHY6AfAWsoUO5KCX1TRIKP//N6mZN4a1yWvAfysb3EHKNn24UOzyrTQsOEgHuwHhph12yqjbM2nw8zQs0Pewunt52sO8sqHjHmJtgtkH244CtEYwp5ordFkS8CkDcYKzMDiQiZNjNsuZk7jDg2ypRMVh14A0ODMaBce6jlCRqv22XUGagcAL2+d7rKZ7V6XQYQ6y+qCinK7qGVVrX+li9/VYEbRE0il3j5UAomIL0owYyLU8cK+vc8xxY5pKrNWmbOf26EaGz4Q/HdZPdlhB/iR8ri7JdsN3/2BtkfZm4tw==
          AWS_REGION: us-east-1
 
       - name: Build and Push Application Image
         env:
           ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
           ECR_REPOSITORY: mkhan348-docker-assignment
-          IMAGE_TAG: v0.1
+          IMAGE_TAG: appv1.0
         run: |
           cd docker/
           docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG -f Dockerfile .
           docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
 
-      - name: Build and Push MySQL Image
+      - name: Build and Push MySQL DB Image
         env:
           ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
           ECR_REPOSITORY: mkhan348-docker-assignment
-          IMAGE_TAG: v1.0
+          IMAGE_TAG: dbv1.0
         run: |
           cd docker/
           docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG -f Dockerfile_mysql .
