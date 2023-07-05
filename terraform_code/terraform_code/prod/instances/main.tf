@@ -171,6 +171,13 @@ resource "aws_eip" "static_eip" {
 resource "aws_ecr_repository" "my_repository" {
   name = "mkhan348-docker-assignment"
   force_delete = true
+  
+  provisioner "local-exec" {
+    command = <<-EOT
+      aws ecr set-repository-policy --repository-name ${aws_ecr_repository.my_repository.name} --policy-text file://ecrpolicy.json
+    EOT
+  }
+
 }
 
 # EBS Volume
