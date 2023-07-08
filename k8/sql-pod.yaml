@@ -11,11 +11,4 @@ spec:
   containers:
   - name: mysql-db
     image: 139675527364.dkr.ecr.us-east-1.amazonaws.com/k8s-assignment:mysql
-    env:
-    - name: MYSQL_ROOT_PASSWORD
-      value: pass123  # Replace with your desired MySQL root password
-    - name: MYSQL_DATABASE
-      value: employees
-    ports:
-    - containerPort: 3306
-      protocol: TCP
+    
