@@ -10,7 +10,7 @@ spec:
     matchLabels:
       app.kubernetes.io/name: webserver
       app.kubernetes.io/component: frontend
-  replicas: 1
+  replicas: 3
   template:
     metadata:
       labels:
