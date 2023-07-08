@@ -1,5 +1,5 @@
 apiVersion: apps/v1
-kind: Replica
+kind: ReplicaSet
 metadata:
   name: mysql
   labels:
@@ -19,5 +19,10 @@ spec:
     spec:
       containers:
       - name: mysql-db
-        image: 139675527364.dkr.ecr.us-east-1.amazonaws.com/k8s-assignment:mysql
+        image: 380544824653.dkr.ecr.us-east-1.amazonaws.com/mkhan348-docker-assignment:dbv1.0
+        env:
+        - name: MYSQL_ROOT_PASSWORD
+          value: pass123  # Replace with your desired MySQL root password
+        - name: MYSQL_DATABASE
+          value: employees
        
