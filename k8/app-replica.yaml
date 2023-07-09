@@ -27,4 +27,6 @@ spec:
           value: root
         - name: DBPWD
           value: password  # Replace with your MySQL password
+       ports:
+       - containerPort: 8080
         
