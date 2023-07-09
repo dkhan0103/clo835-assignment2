@@ -3,8 +3,8 @@ kind: Service
 metadata:
   name: mysql
   labels:
-    app.kubernetes.io/name: mysql
-    app.kubernetes.io/component: backend
+    app: mysql
+    component: backend
 spec:
   ports:
     - name: mysql
@@ -12,5 +12,5 @@ spec:
       targetPort: 3306
       protocol: TCP
   selector:
-    app.kubernetes.io/name: mysql
-    app.kubernetes.io/component: backend
+    app: mysql
+    component: backend
