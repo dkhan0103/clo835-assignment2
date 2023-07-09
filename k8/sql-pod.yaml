@@ -16,4 +16,6 @@ spec:
       value: pass123  # Replace with your desired MySQL root password
     - name: MYSQL_DATABASE
       value: employees
-    
+    ports:
+        - containerPort: 3306
+          protocol: TCP
