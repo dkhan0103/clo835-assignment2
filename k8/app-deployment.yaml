@@ -3,19 +3,19 @@ kind: Deployment
 metadata:
   name: webserver
   labels:
-    app.kubernetes.io/name: webserver
-    app.kubernetes.io/component: frontend
+    app: employees
+    component: frontend
 spec:
   selector:
     matchLabels:
-      app.kubernetes.io/name: webserver
-      app.kubernetes.io/component: frontend
+      app: employees
+      component: frontend
   replicas: 1
   template:
     metadata:
       labels:
-        app.kubernetes.io/name: webserver
-        app.kubernetes.io/component: frontend
+        app: employees
+        component: frontend
     spec:
       containers:
       - name: webserver
@@ -29,7 +29,6 @@ spec:
           value: password  # Replace with your MySQL password
         - name: DATABASE
           value: employees  # Replace with your MySQL database name
-        - name: APP_COLOR
-          value: lime  # Replace with the desired color
+        
         ports:
         - containerPort: 8080
