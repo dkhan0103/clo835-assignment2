@@ -3,26 +3,26 @@ kind: Deployment
 metadata:
   name: mysql
   labels:
-    app.kubernetes.io/name: mysql
-    app.kubernetes.io/component: backend
+    app: mysql
+    component: backend
 spec:
   selector:
     matchLabels:
-      app.kubernetes.io/name: mysql
-      app.kubernetes.io/component: backend
+      app: mysql
+      component: backend
   replicas: 3
   template:
     metadata:
       labels:
-        app.kubernetes.io/name: mysql
-        app.kubernetes.io/component: backend
+        app: mysql
+        component: backend
     spec:
       containers:
       - name: mysql-db
         image: 380544824653.dkr.ecr.us-east-1.amazonaws.com/mkhan348-docker-assignment:dbv1.0
         env:
           - name: MYSQL_ROOT_PASSWORD
-            value: password  # Replace with your desired MySQL root password
+            value: pass123  # Replace with your desired MySQL root password
           - name: MYSQL_DATABASE
             value: employees
         ports:
