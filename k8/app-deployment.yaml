@@ -10,7 +10,7 @@ spec:
     matchLabels:
       app: employees
       component: frontend
-  replicas: 1
+  replicas: 3
   template:
     metadata:
       labels:
@@ -19,14 +19,14 @@ spec:
     spec:
       containers:
       - name: webserver
-        image: 139675527364.dkr.ecr.us-east-1.amazonaws.com/k8s-assignment:app
+        image: 380544824653.dkr.ecr.us-east-1.amazonaws.com/mkhan348-docker-assignment:appv1.1
         env:
         - name: DBHOST
-          value: mysql.webserver.svc.cluster.local  # Replace with the hostname of your MySQL service
+          value: mysql.myns.svc.cluster.local  # Replace with the hostname of your MySQL service
         - name: DBUSER
           value: root
         - name: DBPWD
-          value: password  # Replace with your MySQL password
+          value: pass123  # Replace with your MySQL password
         - name: DATABASE
           value: employees  # Replace with your MySQL database name
         
