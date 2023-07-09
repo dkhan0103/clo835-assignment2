@@ -3,7 +3,7 @@ kind: Pod
 metadata:
   name: webserver
   labels:
-    app: webserver
+    app: employees
     component: frontend
 spec:
  containers:
