@@ -1,11 +1,11 @@
 
-# Welcome to the README file for CLO835 Assignment 1!
+# Welcome to the README file for CLO835 Assignment 2!
 
 By Mohd Danish Khan
 
-## Assignment 1 Title:
+## Assignment 2 Title:
 
-## Create Dockerfile, build docker image and deploy docker container on Amazon Linux EC2  
+## Create Dockerfile, build docker image and deploy docker container on Amazon Linux EC2 for a static webserver application
 
 
 ## Table of Contents
@@ -45,21 +45,20 @@ Instructions on using GitHub action.
 - Git action is triggered as follows:
 - Docker workflow will trigger on any push or pull_request on master branch 
 
-## Using EC2 instance to host the application and database container
+## Using EC2 instance to host the application and database deployment using Kubernetes
 
-Instruction on using EC2 instance to run docker containers
+Instruction on using EC2 instance to run K8 commands
 - ssh to EC2 instance 
 - supply aws learner lab credentials using aws configure
 - login into ecr from ec2 instance 
-- Run the docker run command to build the containers on top of docker images stored in Amazon ECR
+- Run the kubernetes command using pod, replicaset, deployment and service manifest to create app and sql deployment
 
-## Using Browser to Display the application web pages
+## Using Browser to Display the application web page
 Instruction
 - copy the public IP of ec2 instance
 - open the browser
-- access http://<public ip>:8081 #for blue app
-- access http://<public ip>:8082 #for pink app
-- access http://<public ip>:8082 #for lime app
+- access http://<public ip>:30000 
+
  
 
 
