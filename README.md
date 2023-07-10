@@ -5,8 +5,7 @@ By Mohd Danish Khan
 
 ## Assignment 2 Title:
 
-## Create Dockerfile, build docker image and deploy docker container on Amazon Linux EC2 for a static webserver application
-
+## Create K8s cluster, deploy containerized stateless applications using K8s manifests, expose the applications as NodePort services, roll out an updated version of the application 
 
 ## Table of Contents
 - [Using Terraform code to Deploy EC2 instance in public subnet ](#using-terraform-to-deploy-EC2-instance-in-public-subnet)
